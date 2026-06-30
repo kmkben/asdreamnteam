@@ -1,0 +1,396 @@
+/*
+==========================================================
+AS DREAM TEAM
+Page specific styles
+----------------------------------------------------------
+Les composants (navbar, footer, boutons, cartes, etc.)
+sont définis dans components.css.
+
+Ce fichier ne contient que les styles propres aux pages.
+
+Accueil
+Présentation
+Formation
+Compétitions
+Actualités
+Galerie
+Contact
+...
+==========================================================
+*/
+
+
+/*=========================================================
+    HOME
+=========================================================*/
+
+/*=========================================================
+    HOME
+=========================================================*/
+
+.home-hero {
+    padding-top: 1rem;
+}
+
+.home-hero__inner {
+    position: relative;
+    min-height: clamp(560px, 75vh, 760px);
+    border-radius: var(--asdt-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--asdt-shadow-lg);
+}
+
+.home-hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.92), rgba(3, 40, 66, 0.55), rgba(3, 40, 66, 0.15));
+}
+
+.home-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    min-height: clamp(560px, 75vh, 760px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 6vw, 5rem);
+    color: #fff;
+}
+
+.home-hero__title {
+    font-size: clamp(2.45rem, 13vw, 6rem);
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+    .home-hero__content {
+        padding: 2rem;
+    }
+
+    .home-hero__title {
+        letter-spacing: -0.04em;
+    }
+}
+
+.home-hero__text {
+    max-width: 620px;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 1.25rem;
+}
+
+.home-category-card {
+    position: relative;
+    min-height: 360px;
+    border-radius: var(--asdt-radius);
+    overflow: hidden;
+    box-shadow: var(--asdt-shadow);
+}
+
+.home-category-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--asdt-transition);
+}
+
+.home-category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent, rgba(3, 40, 66, 0.92));
+}
+
+.home-category-card div {
+    position: absolute;
+    z-index: 2;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    color: #fff;
+}
+
+.home-category-card span {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--asdt-secondary);
+    letter-spacing: 0.12em;
+}
+
+.home-category-card h3 {
+    font-size: 3rem;
+    font-weight: 950;
+    margin: 0.25rem 0 0;
+}
+
+.home-category-card:hover img {
+    transform: scale(1.08);
+}
+
+.home-timeline {
+    display: grid;
+    gap: 1rem;
+}
+
+.home-timeline > div {
+    padding: 1.25rem;
+    border-left: 4px solid var(--asdt-secondary);
+    border-radius: var(--asdt-radius-sm);
+    background: var(--bs-body-bg);
+    box-shadow: var(--asdt-shadow-sm);
+}
+
+.home-timeline strong {
+    display: block;
+    color: var(--asdt-heading-color);
+    font-size: 1.1rem;
+}
+
+.home-timeline span {
+    color: var(--asdt-muted-color);
+}
+
+.home-stat {
+    padding: 2rem 1rem;
+    border-radius: var(--asdt-radius);
+    background: var(--bs-body-bg);
+    box-shadow: var(--asdt-shadow);
+}
+
+.home-stat strong {
+    display: block;
+    color: var(--asdt-secondary);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 950;
+    line-height: 1;
+}
+
+.home-stat span {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--asdt-muted-color);
+    font-weight: 700;
+}
+
+.home-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    grid-template-rows: 220px 220px;
+    gap: 1rem;
+}
+
+.home-gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--asdt-radius);
+    box-shadow: var(--asdt-shadow);
+}
+
+.home-gallery-grid img:first-child {
+    grid-row: span 2;
+}
+
+@media (max-width: 767.98px) {
+    .home-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .home-gallery-grid img {
+        min-height: 240px;
+    }
+
+    .home-gallery-grid img:first-child {
+        grid-row: auto;
+    }
+}
+
+
+/*=========================================================
+    TEAM
+=========================================================*/
+
+.team-hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.94), rgba(3, 40, 66, 0.55)),
+        url("../images/heroes/team-banner.jpg") center/cover no-repeat;
+    color: #fff;
+}
+
+.team-hero__content {
+    max-width: 760px;
+    padding: 4rem 0;
+}
+
+.team-hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin-top: 1rem;
+}
+
+.team-hero p {
+    max-width: 650px;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 1.25rem;
+}
+
+.team-member-card__image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+
+.team-hero--members {
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.94), rgba(3, 40, 66, 0.55)),
+        url("../images/heroes/team1.jpg") center/cover no-repeat;
+}
+
+
+.team-hero--activities {
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.94), rgba(3, 40, 66, 0.55)),
+        url("../images/heroes/training-banner.jpg") center/cover no-repeat;
+}
+
+.team-hero--sponsors{
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(3,40,66,.92),
+        rgba(3,40,66,.55)
+    ),
+    url("../images/heroes/team-banner.jpg")
+    center/cover no-repeat;
+
+}
+
+
+
+.sponsor-card{
+
+    transition:.35s;
+
+}
+
+.sponsor-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.sponsor-logo{
+
+    height:180px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:2rem;
+
+}
+
+
+
+.sponsor-logo img{
+
+    max-width:140px;
+
+    max-height:90px;
+
+    object-fit:contain;
+
+}
+
+
+.team-hero--partners {
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.92), rgba(3, 40, 66, 0.55)),
+        url("../images/heroes/team-banner.jpg") center/cover no-repeat;
+}
+
+.partner-card {
+    transition: transform var(--asdt-transition), box-shadow var(--asdt-transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--asdt-shadow-lg);
+}
+
+.partner-logo {
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo img {
+    max-width: 160px;
+    max-height: 95px;
+    object-fit: contain;
+}
+
+
+/*=========================================================
+    FORMATION
+=========================================================*/
+
+
+/*=========================================================
+    COMPETITIONS
+=========================================================*/
+
+
+/*=========================================================
+    NEWS
+=========================================================*/
+
+
+/*=========================================================
+    GALLERY
+=========================================================*/
+
+
+/*=========================================================
+    CONTACT
+=========================================================*/
+
+
+/*=========================================================
+    JOIN
+=========================================================*/
+
+
+/*=========================================================
+    ABOUT
+=========================================================*/

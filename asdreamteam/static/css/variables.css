@@ -1,0 +1,44 @@
+:root {
+    /* Brand colors */
+    --asdt-navy: #063b63;
+    --asdt-navy-dark: #032842;
+    --asdt-blue: #0877b7;
+    --asdt-cyan: #19c6d9;
+    --asdt-gray: #6e7480;
+    --asdt-light: #f4f9fc;
+    --asdt-white: #ffffff;
+    --asdt-gold: #f5b301;
+
+    /* Semantic aliases */
+    --asdt-primary: var(--asdt-navy);
+    --asdt-secondary: var(--asdt-cyan);
+    --asdt-accent: var(--asdt-gold);
+
+    /* Text */
+    --asdt-heading-color: var(--asdt-navy);
+    --asdt-muted-color: var(--asdt-gray);
+
+    /* Layout */
+    --asdt-container: 1180px;
+    --asdt-radius-sm: 0.5rem;
+    --asdt-radius: 1.25rem;
+    --asdt-radius-lg: 2rem;
+
+    /* Effects */
+    --asdt-shadow-sm: 0 0.5rem 1rem rgba(6, 59, 99, 0.08);
+    --asdt-shadow: 0 1rem 2.5rem rgba(6, 59, 99, 0.14);
+    --asdt-shadow-lg: 0 1.5rem 4rem rgba(6, 59, 99, 0.22);
+
+    /* Transitions */
+    --asdt-transition: 0.25s ease;
+}
+
+[data-bs-theme="dark"] {
+    --asdt-light: #081d2c;
+    --asdt-heading-color: #eaf8ff;
+    --asdt-muted-color: #b7c6d1;
+
+    --asdt-shadow-sm: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+    --asdt-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.35);
+    --asdt-shadow-lg: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+}

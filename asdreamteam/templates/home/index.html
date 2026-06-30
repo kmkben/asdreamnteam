@@ -1,0 +1,252 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}AS Dream Team - Accueil{% endblock title %}
+
+{% block content %}
+
+<section class="home-hero asdt-shell">
+    <div class="home-hero__inner" data-aos="fade-up">
+        <img src="{% static 'images/images/carousel1.jpg' %}" alt="AS Dream Team" class="home-hero__image">
+
+        <div class="home-hero__overlay"></div>
+
+        <div class="home-hero__content">
+            <span class="asdt-kicker">Club de football</span>
+
+            <h1 class="home-hero__title">
+                Former les champions de demain.
+            </h1>
+
+            <p class="home-hero__text">
+                L’AS Dream Team accompagne les jeunes talents avec discipline,
+                passion et ambition, sur le terrain comme dans la vie.
+            </p>
+
+            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a href="#" class="btn btn-asdt-accent btn-lg fw-bold text-uppercase px-4">
+                    Nous rejoindre
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg fw-bold text-uppercase px-4">
+                    Découvrir le club
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="asdt-kicker">Qui sommes-nous ?</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Plus qu’un club, une école de vie.
+                </h2>
+                <p class="lead asdt-muted">
+                    L’AS Dream Team est un club engagé dans la formation des jeunes,
+                    le développement du talent et la transmission de valeurs fortes :
+                    discipline, respect, solidarité et dépassement de soi.
+                </p>
+                <a href="#" class="btn btn-asdt-primary fw-bold text-uppercase mt-3">
+                    Notre histoire
+                </a>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="{% static 'images/images/asdt-presentation.jpeg' %}"
+                     alt="Présentation AS Dream Team"
+                     class="img-fluid asdt-img-rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Nos forces</span>
+            <h2 class="asdt-title display-5 mt-3">
+                Pourquoi choisir AS Dream Team ?
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-person-lines-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Formation</h5>
+                    <p class="asdt-muted mb-0">
+                        Des séances structurées pour progresser techniquement et tactiquement.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-shield-check asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Discipline</h5>
+                    <p class="asdt-muted mb-0">
+                        Un encadrement sérieux pour apprendre l’effort, le respect et la rigueur.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-trophy-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Compétition</h5>
+                    <p class="asdt-muted mb-0">
+                        Des matchs et tournois pour se mesurer, apprendre et grandir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-people-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Famille</h5>
+                    <p class="asdt-muted mb-0">
+                        Un esprit collectif où chaque joueur trouve sa place.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Catégories</span>
+            <h2 class="asdt-title display-5 mt-3">
+                Un parcours pour chaque âge.
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-4" data-aos="zoom-in">
+                <div class="home-category-card">
+                    <img src="{% static 'images/images/u15.jpg' %}" alt="Catégorie U15">
+                    <div>
+                        <span>Jeunes talents</span>
+                        <h3>U15</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="home-category-card">
+                    <img src="{% static 'images/images/u20.jpg' %}" alt="Catégorie U20">
+                    <div>
+                        <span>Progression</span>
+                        <h3>U20</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="home-category-card">
+                    <img src="{% static 'images/images/senior.jpg' %}" alt="Catégorie Seniors">
+                    <div>
+                        <span>Ambition</span>
+                        <h3>Seniors</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="{% static 'images/images/asdt-formation.jpg' %}"
+                     alt="Formation AS Dream Team"
+                     class="img-fluid asdt-img-rounded">
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <span class="asdt-kicker">Notre méthode</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Former, accompagner, faire progresser.
+                </h2>
+
+                <div class="home-timeline">
+                    <div><strong>1. Inscription</strong><span>Accueil du joueur et échange avec la famille.</span></div>
+                    <div><strong>2. Entraînement</strong><span>Travail technique, physique et tactique.</span></div>
+                    <div><strong>3. Évolution</strong><span>Suivi de la progression et accompagnement personnalisé.</span></div>
+                    <div><strong>4. Compétition</strong><span>Matchs, tournois et expériences collectives.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-lg-3" data-aos="fade-up">
+                <div class="home-stat">
+                    <strong>150+</strong>
+                    <span>Joueurs formés</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="home-stat">
+                    <strong>4</strong>
+                    <span>Catégories</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="home-stat">
+                    <strong>2022</strong>
+                    <span>Année de création</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="home-stat">
+                    <strong>100%</strong>
+                    <span>Passion football</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell text-center" data-aos="fade-up">
+        <span class="asdt-kicker">Actualités</span>
+        <h2 class="asdt-title display-5 mt-3 mb-3">
+            La vie du club en direct.
+        </h2>
+        <p class="asdt-muted fs-5 mb-4">
+            Bientôt, retrouvez ici les dernières nouvelles, matchs, événements et annonces du club.
+        </p>
+        <a href="#" class="btn btn-asdt-primary fw-bold text-uppercase">
+            Voir les actualités
+        </a>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Galerie</span>
+            <h2 class="asdt-title display-5 mt-3">
+                Les moments forts en images.
+            </h2>
+        </div>
+
+        <div class="home-gallery-grid" data-aos="fade-up">
+            <img src="{% static 'images/images/team1.jpg' %}" alt="AS Dream Team photo">
+            <img src="{% static 'images/images/carousel2.jpg' %}" alt="AS Dream Team photo">
+            <img src="{% static 'images/images/carousel3.jpg' %}" alt="AS Dream Team photo">
+            <img src="{% static 'images/images/training-banner.jpg' %}" alt="AS Dream Team photo">
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

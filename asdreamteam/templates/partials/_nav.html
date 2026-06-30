@@ -1,0 +1,36 @@
+<header class="mb-auto"> 
+    <div> 
+        <h3 class="float-md-start mb-0 fw-bold {% if page == 'home' %}text-white{% else %}text-body{% endif %}">AS DREAM TEAM</h3> 
+        
+        <nav class="nav nav-masthead justify-content-center float-md-end {% if page == 'home' %}text-white{% else %}text-body{% endif %}"> 
+            {% for item in menu_items %}
+                {% if item.dropdown %}
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold py-1 px-3 btn btn-outline-secondary {% if page == 'home' %}text-white{% else %}text-body{% endif %}"
+                        href="#" id="dropdown{{ forloop.counter }}" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ item.label }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for subitem in item.items %}
+                                <li>
+                                    <a class="dropdown-item {% if page == subitem.page %}active{% endif %}"
+                                    href="{% url subitem.url %}">
+                                        {{ subitem.label }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% else %}
+                    <a class="nav-link fw-bold py-1 px-1
+                        {% if page == 'home' %}text-white{% else %}text-body{% endif %}
+                        {% if page == item.page %}active{% endif %}"
+                        href="{% url item.url %}">
+                        {{ item.label }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </nav> 
+    </div> 
+</header>

@@ -1,0 +1,111 @@
+{% load static %}
+
+<footer class="asdt-footer">
+    <div class="asdt-shell py-5">
+
+        <div class="text-center mb-5">
+          	<img src="{% static 'images/branding/logos/asdt-logo.png' %}"
+				alt="Logo {{ SITE_NAME }}"
+				width="120"
+				height="120"
+				class="asdt-logo asdt-logo-lg mb-3">
+
+            <h2 class="text-uppercase fw-black mb-2">{{ SITE_NAME }}</h2>
+            <p class="mb-0 text-white-50">
+                {{ SITE_TAGLINE }}
+            </p>
+        </div>
+
+        <div class="row gy-4 justify-content-between">
+            <div class="col-md-4">
+                <h5 class="asdt-footer-title mb-3">Liens rapide</h5>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li><a href="#">Formation</a></li>
+                    <li><a href="#">Compétitions</a></li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#">Galerie</a></li>
+                    <li><a href="#">Nous rejoindre</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5 class="asdt-footer-title mb-3">Contact</h5>
+                <ul class="list-unstyled d-grid gap-3">
+                    <li>
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        Porto-Novo, Bénin
+                    </li>
+                    <li>
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        ongdreamteam@europe.com
+                    </li>
+                    <li>
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +33 6 01 61 75 91
+                    </li>
+                    <li>
+                        <i class="bi bi-whatsapp me-2"></i>
+                        +229 01 46 14 68 58
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5 class="asdt-footer-title mb-3">Suivez-nous</h5>
+                <p class="text-white-50">
+                    Retrouvez les actualités, photos et moments forts du club sur nos réseaux.
+                </p>
+
+                <div class="d-flex gap-2">
+                    <a href="https://www.facebook.com/share/19GhK9vf7g/"
+                       class="btn btn-primary asdt-social-btn"
+                       target="_blank"
+                       rel="noopener"
+                       aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/gmfvf2000/profilecard/?igsh=MTRzanZ3YjN0aXBkYQ=="
+                       class="btn btn-instagram asdt-social-btn"
+                       target="_blank"
+                       rel="noopener"
+                       aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#"
+                       class="btn btn-dark border-light asdt-social-btn"
+                       aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+
+                    <a href="#"
+                       class="btn btn-success asdt-social-btn"
+                       aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-light opacity-25 my-5">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center text-md-start">
+            <p class="mb-0 text-white-50">
+                &copy; 2022–{% now "Y" %} {{ SITE_NAME }}. Tous droits réservés.
+            </p>
+
+            <p class="mb-0 text-white-50 asdt-dev-signature">
+                Conçu et développé avec passion par
+                <a href="{{ DEVELOPER_URL }}"
+                   target="_blank"
+                   rel="noopener"
+                   class="fw-bold">
+                    {{ DEVELOPER_NAME }}
+                </a>
+            </p>
+        </div>
+
+    </div>
+</footer>

@@ -1,0 +1,106 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Sponsors | AS Dream Team{% endblock title %}
+
+{% block content %}
+
+<section class="team-hero team-hero--sponsors">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Ils nous soutiennent</span>
+
+            <h1>Sponsors</h1>
+
+            <p>
+                Nos sponsors accompagnent le développement du club
+                et participent à la réussite de nos jeunes talents.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="asdt-section">
+
+    <div class="asdt-shell">
+
+        {% if sponsors %}
+
+            <div class="row g-4">
+
+                {% for sponsor in sponsors %}
+
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-aos="zoom-in">
+
+                        <div class="asdt-card sponsor-card h-100">
+
+                            <div class="sponsor-logo">
+
+                                {% if sponsor.logo %}
+                                    <img src="{{ sponsor.logo.url }}"
+                                         alt="{{ sponsor.name }}">
+                                {% else %}
+                                    <img src="{% static 'images/logos/default-logo.png' %}"
+                                         alt="{{ sponsor.name }}">
+                                {% endif %}
+
+                            </div>
+
+                            <div class="p-4">
+
+                                <h5 class="fw-black">
+                                    {{ sponsor.name }}
+                                </h5>
+
+                                {% if sponsor.description %}
+                                    <p class="asdt-muted">
+                                        {{ sponsor.description|truncatewords:18 }}
+                                    </p>
+                                {% endif %}
+
+                                {% if sponsor.website %}
+
+                                    <a href="{{ sponsor.website }}"
+                                       target="_blank"
+                                       class="btn btn-asdt-primary btn-sm">
+
+                                        Visiter
+
+                                    </a>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="asdt-card text-center p-5">
+
+                <i class="bi bi-building fs-1 text-secondary"></i>
+
+                <h3 class="mt-4">
+                    Aucun sponsor pour le moment
+                </h3>
+
+                <p class="asdt-muted">
+                    Cette section sera bientôt mise à jour.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Membres | AS Dream Team{% endblock title %}
+
+{% block content %}
+
+<section class="team-hero team-hero--members">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Notre équipe</span>
+            <h1>Membres</h1>
+            <p>
+                Découvrez les joueurs, dirigeants, coachs et membres qui font vivre l’AS Dream Team.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+
+        {% if members %}
+            <div class="row g-4">
+                {% for member in members %}
+                    <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                        <div class="asdt-card asdt-card-hover h-100">
+                            {% if member.photo %}
+                                <img src="{{ member.photo.url }}"
+                                     alt="{{ member.full_name }}"
+                                     class="team-member-card__image">
+                            {% else %}
+                                <img src="{% static 'images/defaults/default-member.jpg' %}"
+                                     alt="{{ member.full_name }}"
+                                     class="team-member-card__image">
+                            {% endif %}
+
+                            <div class="p-4">
+                                <span class="asdt-kicker">{{ member.get_role_display }}</span>
+                                <h5 class="fw-black mt-2 mb-1">{{ member.full_name }}</h5>
+
+                                {% if member.position %}
+                                    <p class="asdt-muted mb-1">{{ member.position }}</p>
+                                {% endif %}
+
+                                {% if member.category %}
+                                    <p class="small fw-bold text-uppercase mb-0">
+                                        {{ member.category }}
+                                    </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="asdt-card p-5 text-center">
+                <h2 class="asdt-title">Aucun membre affiché pour le moment.</h2>
+                <p class="asdt-muted mb-0">
+                    Les membres du club seront bientôt disponibles.
+                </p>
+            </div>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,183 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Présentation | AS Dream Team{% endblock title %}
+
+{% block content %}
+
+<section class="team-hero">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Le club</span>
+            <h1>AS Dream Team</h1>
+            <p>
+                Un club de football engagé dans la formation, la discipline
+                et l’accompagnement des jeunes talents.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="asdt-kicker">Qui sommes-nous ?</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Plus qu’un club, une famille sportive.
+                </h2>
+
+                <p class="lead asdt-muted">
+                    L’AS Dream Team accompagne les jeunes passionnés de football
+                    dans leur progression sportive et humaine.
+                </p>
+
+                <p class="asdt-muted">
+                    Notre objectif est de transmettre des valeurs fortes :
+                    respect, discipline, solidarité, dépassement de soi et amour du jeu.
+                    Chaque joueur est encouragé à progresser à son rythme dans un cadre sérieux.
+                </p>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="{% static 'images/heroes/team-banner.jpg' %}"
+                     alt="AS Dream Team"
+                     class="img-fluid asdt-img-rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Notre identité</span>
+            <h2 class="asdt-title display-5 mt-3">
+                Les valeurs qui nous guident.
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-shield-check asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Discipline</h5>
+                    <p class="asdt-muted mb-0">
+                        Apprendre à respecter les règles, l’effort et le collectif.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-heart-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Solidarité</h5>
+                    <p class="asdt-muted mb-0">
+                        Grandir ensemble, sur le terrain comme en dehors.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-trophy-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Ambition</h5>
+                    <p class="asdt-muted mb-0">
+                        Viser haut, progresser chaque jour et croire en son potentiel.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-people-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Famille</h5>
+                    <p class="asdt-muted mb-0">
+                        Un environnement où chacun trouve sa place.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="asdt-kicker">Organisation</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Une structure pensée pour accompagner les jeunes.
+                </h2>
+                <p class="asdt-muted">
+                    Le club s’appuie sur une équipe engagée : dirigeants,
+                    encadreurs, coachs et bénévoles travaillent ensemble pour offrir
+                    un cadre sérieux et motivant.
+                </p>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="asdt-card p-4 h-100">
+                            <h5 class="fw-black">Direction</h5>
+                            <p class="asdt-muted mb-0">
+                                Vision, organisation et développement du club.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="asdt-card p-4 h-100">
+                            <h5 class="fw-black">Encadrement sportif</h5>
+                            <p class="asdt-muted mb-0">
+                                Formation, suivi et progression des joueurs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="asdt-card p-4 h-100">
+                            <h5 class="fw-black">Vie du club</h5>
+                            <p class="asdt-muted mb-0">
+                                Activités, événements, communication et communauté.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="asdt-card p-4 h-100">
+                            <h5 class="fw-black">Partenaires</h5>
+                            <p class="asdt-muted mb-0">
+                                Soutiens, sponsors et collaborations locales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if staff_members %}
+            <div class="mt-5">
+                <h3 class="asdt-title mb-4">Quelques membres de l’encadrement</h3>
+                <div class="row g-4">
+                    {% for member in staff_members %}
+                        <div class="col-md-6 col-xl-4">
+                            <div class="asdt-card asdt-card-hover h-100">
+                                {% if member.photo %}
+                                    <img src="{{ member.photo.url }}" alt="{{ member.full_name }}" class="team-member-card__image">
+                                {% endif %}
+                                <div class="p-4">
+                                    <h5 class="fw-black mb-1">{{ member.full_name }}</h5>
+                                    <p class="asdt-muted mb-0">{{ member.get_role_display }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock content %}

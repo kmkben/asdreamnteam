@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Activités | AS Dream Team{% endblock title %}
+
+{% block content %}
+
+<section class="team-hero team-hero--activities">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Vie du club</span>
+            <h1>Activités</h1>
+            <p>
+                Entraînements, détections, tournois, stages et moments de partage :
+                l’AS Dream Team vit au rythme du football.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row g-4">
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-cone-striped asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Entraînements</h5>
+                    <p class="asdt-muted mb-0">
+                        Des séances régulières pour développer technique, physique et mental.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-search-heart asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Détections</h5>
+                    <p class="asdt-muted mb-0">
+                        Des opportunités pour repérer et accompagner les jeunes talents.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-trophy-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Tournois</h5>
+                    <p class="asdt-muted mb-0">
+                        Des rencontres pour apprendre, progresser et représenter fièrement le club.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-people-fill asdt-icon mb-3"></i>
+                    <h5 class="fw-black">Vie associative</h5>
+                    <p class="asdt-muted mb-0">
+                        Des moments collectifs pour renforcer les liens entre joueurs, familles et staff.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="asdt-kicker">Notre rythme</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Une saison construite autour de la progression.
+                </h2>
+                <p class="lead asdt-muted">
+                    Chaque activité a un objectif : apprendre, jouer, grandir et vivre le football
+                    dans un cadre sérieux et motivant.
+                </p>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="{% static 'images/heroes/training-banner.jpg' %}"
+                     alt="Activités AS Dream Team"
+                     class="img-fluid asdt-img-rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

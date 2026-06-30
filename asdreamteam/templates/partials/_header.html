@@ -1,0 +1,138 @@
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-expand-xl fixed-top bg-body-tertiary asdt-navbar">
+        <div class="container-fluid px-3">
+
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <img src="{% static 'images/branding/logos/asdt-logo.png' %}"
+                     alt="Logo AS Dream Team"
+                     width="52"
+                     height="52"
+                     class="asdt-logo me-2">
+
+                <div class="lh-sm">
+                    <span class="logo-text d-block text-uppercase fw-black text-truncate">
+                        {{ SITE_NAME }}
+                    </span>
+                    <small class="asdt-brand-tagline d-none d-md-block">
+                        {{ SITE_TAGLINE }}
+                    </small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Afficher ou masquer le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                <ul class="navbar-nav text-uppercase align-items-xl-center gap-xl-1">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'home' %}active{% endif %}"
+                           href="{% url 'home' %}">
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if page in 'presentation members activities sponsors partners' %}active{% endif %}"
+                           href="#"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Le Club
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item {% if page == 'presentation' %}active{% endif %}"
+                                   href="{% url 'team:presentation' %}">
+                                    Présentation
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item {% if page == 'members' %}active{% endif %}"
+                                   href="{% url 'team:members' %}">
+                                    Membres
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item {% if page == 'activities' %}active{% endif %}"
+                                   href="{% url 'team:activities' %}">
+                                    Activités
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item {% if page == 'sponsors' %}active{% endif %}"
+                                   href="{% url 'team:sponsors' %}">
+                                    Sponsors
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item {% if page == 'partners' %}active{% endif %}"
+                                   href="{% url 'team:partners' %}">
+                                    Partenaires
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'academy' %}active{% endif %}" href="#">
+                            Académie
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'competitions' %}active{% endif %}" href="#">
+                            Compétitions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'news' %}active{% endif %}" href="#">
+                            Actualités
+                        </a>
+                    </li>
+
+                    <!--<li class="nav-item">
+                        <a class="nav-link {% if page == 'gallery' %}active{% endif %}" href="#">
+                            Galerie
+                        </a>
+                    </li>-->
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if page == 'contact' %}active{% endif %}" href="#">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-xl-2 mt-3 mt-xl-0">
+                        <a class="btn btn-outline-asdt btn-sm fw-bold text-uppercase px-3 {% if page == 'donation' %}active{% endif %}"
+                           href="#">
+                            Faire un don
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-2 mt-xl-0">
+                        <a class="btn btn-asdt-accent btn-sm fw-bold text-uppercase px-3 {% if page == 'membership' %}active{% endif %}"
+                           href="#">
+                            Nous rejoindre
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
