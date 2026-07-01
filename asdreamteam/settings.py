@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'pages',
     'team',
     'academy',
-    # 'competitions',
+    'competitions',
     # 'gallery',
     # 'news',
     # 'contact',

@@ -525,9 +525,65 @@ Contact
 }
 
 
+
+
 /*=========================================================
     COMPETITIONS
 =========================================================*/
+
+.competitions-hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.95), rgba(3, 40, 66, 0.55), rgba(3, 40, 66, 0.2)),
+        url("../images/heroes/asdt-competition.jpg") center/cover no-repeat;
+    color: #fff;
+}
+
+.competitions-hero--list,
+.competitions-hero--matches {
+    min-height: 420px;
+}
+
+.competition-logo {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.competition-match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.competition-score {
+    min-width: 92px;
+    text-align: center;
+    color: var(--asdt-secondary);
+    font-size: 2rem;
+    font-weight: 950;
+}
+
+.competitions-table th {
+    color: var(--asdt-heading-color);
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 767.98px) {
+    .competition-match-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .competition-score {
+        text-align: left;
+    }
+}
 
 
 /*=========================================================

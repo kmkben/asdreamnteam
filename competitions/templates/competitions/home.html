@@ -1,0 +1,158 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Compétitions | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="competitions-hero">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Compétitions</span>
+            <h1>Jouer. Apprendre. Gagner.</h1>
+            <p>
+                Retrouvez les compétitions, matchs à venir et derniers résultats
+                de l’AS Dream Team.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div>
+                <span class="asdt-kicker">Nos compétitions</span>
+                <h2 class="asdt-title display-5 mt-3 mb-0">
+                    Les terrains où l’équipe progresse.
+                </h2>
+            </div>
+
+            <a href="{% url 'competitions:competitions' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                Voir toutes
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for competition in competitions %}
+                <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                    <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                        {% if competition.logo %}
+                            <img src="{{ competition.logo.url }}" alt="{{ competition.name }}" class="competition-logo mb-3">
+                        {% else %}
+                            <i class="bi bi-trophy-fill asdt-icon mb-3"></i>
+                        {% endif %}
+
+                        <h5 class="fw-black">{{ competition.name }}</h5>
+
+                        {% if competition.season %}
+                            <p class="small fw-bold text-uppercase mb-2">{{ competition.season }}</p>
+                        {% endif %}
+
+                        {% if competition.description %}
+                            <p class="asdt-muted mb-0">
+                                {{ competition.description|truncatewords:20 }}
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <h3 class="fw-black">Aucune compétition pour le moment</h3>
+                        <p class="asdt-muted mb-0">Les compétitions seront bientôt affichées.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="d-flex justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <span class="asdt-kicker">À venir</span>
+                        <h2 class="asdt-title h1 mt-2 mb-0">Prochains matchs</h2>
+                    </div>
+                    <a href="{% url 'competitions:matches' %}" class="btn btn-asdt-primary btn-sm fw-bold text-uppercase">
+                        Tout voir
+                    </a>
+                </div>
+
+                <div class="d-grid gap-3">
+                    {% for match in upcoming_matches %}
+                        <div class="asdt-card p-4">
+                            <div class="competition-match-row">
+                                <div>
+                                    <span class="asdt-kicker">{{ match.competition.name }}</span>
+                                    <h5 class="fw-black mt-2 mb-1">
+                                        AS Dream Team vs {{ match.opponent }}
+                                    </h5>
+                                    <p class="asdt-muted mb-0">
+                                        {{ match.match_date|date:"d F Y" }} • {{ match.match_date|time:"H:i" }}
+                                    </p>
+                                </div>
+
+                                <div class="text-lg-end">
+                                    <span class="badge text-bg-primary">
+                                        {{ match.get_status_display }}
+                                    </span>
+                                    <p class="small fw-bold mt-2 mb-0">
+                                        {{ match.location }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="asdt-card p-4">
+                            <p class="asdt-muted mb-0">Aucun match à venir pour le moment.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="d-flex justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <span class="asdt-kicker">Résultats</span>
+                        <h2 class="asdt-title h1 mt-2 mb-0">Derniers résultats</h2>
+                    </div>
+                    <a href="{% url 'competitions:matches' %}" class="btn btn-asdt-primary btn-sm fw-bold text-uppercase">
+                        Tout voir
+                    </a>
+                </div>
+
+                <div class="d-grid gap-3">
+                    {% for match in latest_results %}
+                        <div class="asdt-card p-4">
+                            <div class="competition-match-row">
+                                <div>
+                                    <span class="asdt-kicker">{{ match.competition.name }}</span>
+                                    <h5 class="fw-black mt-2 mb-1">
+                                        AS Dream Team vs {{ match.opponent }}
+                                    </h5>
+                                    <p class="asdt-muted mb-0">
+                                        {{ match.match_date|date:"d F Y" }}
+                                    </p>
+                                </div>
+
+                                <div class="competition-score">
+                                    {{ match.our_score|default:"-" }} - {{ match.opponent_score|default:"-" }}
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="asdt-card p-4">
+                            <p class="asdt-muted mb-0">Aucun résultat disponible pour le moment.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

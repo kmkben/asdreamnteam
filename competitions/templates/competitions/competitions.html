@@ -1,0 +1,64 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Liste des compétitions | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="competitions-hero competitions-hero--list">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Compétitions</span>
+            <h1>Nos compétitions</h1>
+            <p>
+                Les championnats, tournois et rencontres qui rythment la saison du club.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row g-4">
+            {% for competition in competitions %}
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="asdt-card asdt-card-hover h-100 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            {% if competition.logo %}
+                                <img src="{{ competition.logo.url }}" alt="{{ competition.name }}" class="competition-logo">
+                            {% else %}
+                                <i class="bi bi-trophy-fill asdt-icon"></i>
+                            {% endif %}
+
+                            <div>
+                                <h5 class="fw-black mb-1">{{ competition.name }}</h5>
+                                {% if competition.season %}
+                                    <p class="small fw-bold text-uppercase mb-0">{{ competition.season }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% if competition.description %}
+                            <p class="asdt-muted mb-0">
+                                {{ competition.description }}
+                            </p>
+                        {% else %}
+                            <p class="asdt-muted mb-0">
+                                Plus d'informations seront ajoutées prochainement.
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <h3 class="fw-black">Aucune compétition disponible</h3>
+                        <p class="asdt-muted mb-0">Revenez bientôt pour découvrir les compétitions du club.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
