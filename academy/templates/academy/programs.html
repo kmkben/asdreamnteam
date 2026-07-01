@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Programmes | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-banner academy-hero">
+    <div class="asdt-shell text-center">
+        <span class="asdt-kicker">Académie</span>
+        <h1 class="display-4 fw-black">Nos programmes</h1>
+        <p class="lead">
+            Une méthode d'entraînement moderne adaptée à chaque catégorie.
+        </p>
+    </div>
+</section>
+
+<section class="asdt-section">
+	<div class="asdt-shell">
+		<div class="row g-4">
+			{% for program in programs %}
+				<div class="col-lg-6">
+					{% include "partials/cards/program_card.html" %}
+				</div>
+			{% empty %}
+				<div class="col-12">
+					<div class="alert alert-info text-center">
+						Aucun programme disponible.
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}

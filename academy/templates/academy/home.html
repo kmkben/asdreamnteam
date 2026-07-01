@@ -1,0 +1,230 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Académie | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="academy-landing-hero">
+    <div class="asdt-shell">
+        <div class="academy-landing-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Académie AS Dream Team</span>
+
+            <h1>
+                Former les talents de demain.
+            </h1>
+
+            <p>
+                Un cadre sérieux pour aider chaque jeune joueur à progresser techniquement,
+                tactiquement, physiquement et humainement.
+            </p>
+
+            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a href="#" class="btn btn-asdt-accent btn-lg fw-bold text-uppercase px-4">
+                    Rejoindre l’académie
+                </a>
+
+                <a href="{% url 'academy:schedules' %}" class="btn btn-outline-light btn-lg fw-bold text-uppercase px-4">
+                    Voir les horaires
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="asdt-kicker">Notre vision</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Une formation sportive et humaine.
+                </h2>
+
+                <p class="lead asdt-muted">
+                    L’académie ne forme pas seulement des joueurs : elle accompagne des jeunes
+                    dans leur discipline, leur confiance, leur esprit d’équipe et leur ambition.
+                </p>
+
+                <div class="row g-3 mt-4">
+                    <div class="col-sm-6">
+                        <div class="academy-value-mini">
+                            <i class="bi bi-shield-check"></i>
+                            <span>Discipline</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="academy-value-mini">
+                            <i class="bi bi-person-arms-up"></i>
+                            <span>Progression</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="academy-value-mini">
+                            <i class="bi bi-people-fill"></i>
+                            <span>Esprit d’équipe</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="academy-value-mini">
+                            <i class="bi bi-trophy-fill"></i>
+                            <span>Ambition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="{% static 'images/heroes/training-banner.jpg' %}"
+                     alt="Académie AS Dream Team"
+                     class="img-fluid asdt-img-rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Parcours</span>
+            <h2 class="asdt-title display-5 mt-3">
+                Une progression étape par étape.
+            </h2>
+        </div>
+
+        <div class="academy-process">
+            <div class="academy-process__item" data-aos="fade-up">
+                <strong>01</strong>
+                <h5>Accueil</h5>
+                <p>Découverte du joueur, de son niveau et de ses objectifs.</p>
+            </div>
+
+            <div class="academy-process__item" data-aos="fade-up" data-aos-delay="100">
+                <strong>02</strong>
+                <h5>Entraînement</h5>
+                <p>Travail technique, tactique, physique et mental.</p>
+            </div>
+
+            <div class="academy-process__item" data-aos="fade-up" data-aos-delay="200">
+                <strong>03</strong>
+                <h5>Suivi</h5>
+                <p>Accompagnement régulier pour mesurer la progression.</p>
+            </div>
+
+            <div class="academy-process__item" data-aos="fade-up" data-aos-delay="300">
+                <strong>04</strong>
+                <h5>Compétition</h5>
+                <p>Matchs, tournois et situations réelles de jeu.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div data-aos="fade-up">
+                <span class="asdt-kicker">Catégories</span>
+                <h2 class="asdt-title display-5 mt-3 mb-0">
+                    Chaque âge a son parcours.
+                </h2>
+            </div>
+
+            <a href="{% url 'academy:categories' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                Toutes les catégories
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for category in categories %}
+                <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                    {% include "partials/cards/category_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <h3 class="fw-black">Aucune catégorie pour le moment</h3>
+                        <p class="asdt-muted mb-0">Les catégories seront bientôt affichées.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div data-aos="fade-up">
+                <span class="asdt-kicker">Programmes</span>
+                <h2 class="asdt-title display-5 mt-3 mb-0">
+                    Une méthode claire et structurée.
+                </h2>
+            </div>
+
+            <a href="{% url 'academy:programs' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                Tous les programmes
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for program in programs %}
+                <div class="col-md-6" data-aos="fade-up">
+                    {% include "partials/cards/program_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <h3 class="fw-black">Aucun programme pour le moment</h3>
+                        <p class="asdt-muted mb-0">Les programmes seront bientôt affichés.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="asdt-kicker">Horaires</span>
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Des entraînements réguliers.
+                </h2>
+
+                <p class="asdt-muted">
+                    Les horaires sont organisés selon les catégories afin d’assurer
+                    un encadrement adapté à chaque groupe.
+                </p>
+
+                <a href="{% url 'academy:schedules' %}" class="btn btn-asdt-primary fw-bold text-uppercase mt-3">
+                    Consulter les horaires
+                </a>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="asdt-card p-4">
+                    {% for schedule in schedules %}
+                        <div class="academy-schedule-row">
+                            <strong>{{ schedule.category }}</strong>
+                            <span>
+                                {{ schedule.get_day_display }} •
+                                {{ schedule.start_time|time:"H:i" }} - {{ schedule.end_time|time:"H:i" }}
+                            </span>
+                        </div>
+                    {% empty %}
+                        <p class="asdt-muted mb-0">
+                            Aucun horaire disponible pour le moment.
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

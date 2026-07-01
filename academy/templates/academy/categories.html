@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Catégories | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-banner academy-hero">
+    <div class="asdt-shell text-center">
+        <span class="asdt-kicker">Académie</span>
+        <h1 class="display-4 fw-black">Nos catégories</h1>
+        <p class="lead">
+            Chaque joueur évolue dans une catégorie adaptée à son âge et à son niveau.
+        </p>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+
+        <div class="row g-4">
+
+            {% for category in categories %}
+
+                <div class="col-md-6 col-lg-4 col-xl-3">
+
+                    {% include "partials/cards/category_card.html" %}
+
+                </div>
+
+            {% empty %}
+
+                <div class="col-12">
+
+                    <div class="alert alert-info text-center">
+
+                        Aucune catégorie disponible.
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
