@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Toutes les actualités | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="news-hero news-hero--list">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Actualités</span>
+            <h1>Toutes les actualités</h1>
+            <p>
+                Retrouvez les dernières publications et annonces officielles du club.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row g-4">
+            {% for article in articles %}
+                <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                    {% include "partials/cards/news_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <i class="bi bi-newspaper fs-1 text-secondary"></i>
+                        <h3 class="fw-black mt-4">Aucune actualité disponible</h3>
+                        <p class="asdt-muted mb-0">
+                            Revenez bientôt pour découvrir les nouvelles du club.
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

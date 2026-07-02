@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}{{ article.title }} | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="news-detail-hero">
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="news-detail-hero__image">
+    {% else %}
+        <img src="{% static 'images/defaults/default-news.jpg' %}" alt="{{ article.title }}" class="news-detail-hero__image">
+    {% endif %}
+
+    <div class="news-detail-hero__overlay"></div>
+
+    <div class="asdt-shell">
+        <div class="news-detail-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">
+                Actualité • {{ article.published_at|date:"d F Y" }}
+            </span>
+
+            <h1>
+                {{ article.title }}
+            </h1>
+
+            <p>
+                {{ article.summary }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <article class="asdt-card news-article-content p-4 p-md-5" data-aos="fade-up">
+                    {{ article.content|linebreaks }}
+
+                    <hr class="my-5">
+
+                    <a href="{% url 'news:articles' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                        Retour aux actualités
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

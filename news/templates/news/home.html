@@ -1,0 +1,79 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Actualités | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="news-hero">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Actualités</span>
+            <h1>La vie du club en direct.</h1>
+            <p>
+                Suivez les nouvelles, événements, matchs, annonces et moments forts
+                de l’AS Dream Team.
+            </p>
+        </div>
+    </div>
+</section>
+
+{% if featured %}
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div data-aos="fade-up">
+                <span class="asdt-kicker">À la une</span>
+                <h2 class="asdt-title display-5 mt-3 mb-0">
+                    L’actualité importante.
+                </h2>
+            </div>
+
+            <a href="{% url 'news:articles' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                Toutes les actualités
+            </a>
+        </div>
+
+        <div data-aos="zoom-in">
+            {% include "partials/cards/featured_news_card.html" %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="asdt-section {% if featured %}asdt-soft-bg{% endif %}">
+    <div class="asdt-shell">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div data-aos="fade-up">
+                <span class="asdt-kicker">Dernières nouvelles</span>
+                <h2 class="asdt-title display-5 mt-3 mb-0">
+                    Ce qui se passe au club.
+                </h2>
+            </div>
+
+            <a href="{% url 'news:articles' %}" class="btn btn-asdt-primary fw-bold text-uppercase">
+                Voir tout
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for article in articles %}
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                    {% include "partials/cards/news_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="asdt-card p-5 text-center">
+                        <i class="bi bi-newspaper fs-1 text-secondary"></i>
+                        <h3 class="fw-black mt-4">Aucune actualité pour le moment</h3>
+                        <p class="asdt-muted mb-0">
+                            Les actualités du club seront bientôt publiées.
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

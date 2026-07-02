@@ -141,7 +141,7 @@
         <div class="row g-4">
             {% for category in categories %}
                 <div class="col-md-6 col-xl-3" data-aos="fade-up">
-                    {% include "partials/cards/category_card.html" %}
+                    {% include "partials/cards/_category_card.html" %}
                 </div>
             {% empty %}
                 <div class="col-12">
@@ -173,7 +173,7 @@
         <div class="row g-4">
             {% for program in programs %}
                 <div class="col-md-6" data-aos="fade-up">
-                    {% include "partials/cards/program_card.html" %}
+                    {% include "partials/cards/_program_card.html" %}
                 </div>
             {% empty %}
                 <div class="col-12">
