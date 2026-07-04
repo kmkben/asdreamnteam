@@ -850,6 +850,33 @@ Contact
 =========================================================*/
 
 
+.contact-hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(3, 40, 66, 0.95), rgba(3, 40, 66, 0.55), rgba(3, 40, 66, 0.2)),
+        url("../images/heroes/team-banner.jpg") center/cover no-repeat;
+    color: #fff;
+}
+
+.asdt-contact-icon {
+    color: var(--asdt-secondary);
+    font-size: 2rem;
+}
+
+.contact-map-placeholder {
+    padding: clamp(3rem, 6vw, 5rem);
+    background:
+        linear-gradient(135deg, rgba(8, 119, 183, 0.08), rgba(25, 198, 217, 0.12));
+}
+
+.contact-map-placeholder i {
+    color: var(--asdt-secondary);
+    font-size: 4rem;
+}
+
+
 /*=========================================================
     JOIN
 =========================================================*/
