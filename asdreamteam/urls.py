@@ -35,5 +35,8 @@ urlpatterns = [
     
     path("contact/", include("contact.urls")),
     
+    path("donation/", include("donation.urls"),
+),
+    
     path('admin/', admin.site.urls),
 ]

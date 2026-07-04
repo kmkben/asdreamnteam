@@ -878,6 +878,33 @@ Contact
 
 
 /*=========================================================
+    DONATION
+=========================================================*/
+
+.donation-hero{
+
+    min-height:560px;
+    
+    display:flex;
+    
+    align-items:center;
+    
+    background:
+    linear-gradient(
+    90deg,
+    rgba(3,40,66,.95),
+    rgba(3,40,66,.55),
+    rgba(3,40,66,.20)
+    ),
+    url("../images/heroes/donation-banner.jpg")
+    center/cover no-repeat;
+    
+    color:white;
+    
+    }
+
+
+/*=========================================================
     JOIN
 =========================================================*/
 

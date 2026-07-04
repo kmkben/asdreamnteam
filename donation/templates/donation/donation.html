@@ -1,0 +1,131 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}
+    Faire un don | {{ SITE_NAME }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="donation-hero">
+
+        <div class="asdt-shell">
+
+            <div class="team-hero__content">
+
+                <span class="asdt-kicker">Soutenez le club</span>
+
+                <h1>Chaque don compte.</h1>
+
+                <p>
+                    Votre soutien permet d'acheter du matériel, d'organiser des compétitions, de former les jeunes et de faire grandir l'AS Dream Team.
+                </p>
+
+                <a href="#donate" class="btn btn-asdt-accent btn-lg fw-bold mt-4">Je fais un don</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="asdt-section">
+
+        <div class="asdt-shell">
+
+            <div class="text-center mb-5">
+
+                <span class="asdt-kicker">Pourquoi soutenir ?</span>
+
+                <h2 class="display-5 fw-black mt-3">Votre aide change des vies.</h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="asdt-card p-4 h-100 text-center">
+
+                        <i class="bi bi-dribbble fs-1 text-warning"></i>
+
+                        <h4 class="fw-black mt-4">Matériel sportif</h4>
+
+                        <p class="asdt-muted">Ballons, chasubles, cônes, équipements et entretien. </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="asdt-card p-4 h-100 text-center">
+
+                        <i class="bi bi-mortarboard-fill fs-1 text-warning"></i>
+
+                        <h4 class="fw-black mt-4">Formation</h4>
+
+                        <p class="asdt-muted">Accompagner les jeunes dans leur progression. </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="asdt-card p-4 h-100 text-center">
+
+                        <i class="bi bi-trophy-fill fs-1 text-warning"></i>
+
+                        <h4 class="fw-black mt-4">Compétitions</h4>
+
+                        <p class="asdt-muted">Participer à davantage de tournois.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="donate" class="asdt-section asdt-soft-bg">
+
+        <div class="asdt-shell">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <h2 class="display-5 fw-black">Comment faire un don ?</h2>
+
+                    <p class="lead asdt-muted mt-4">Les moyens de paiement seront bientôt disponibles. En attendant, vous pouvez contacter directement le club.</p>
+
+                    <a href="{% url 'contact:contact' %}" class="btn btn-asdt-primary fw-bold mt-4">Contacter le club</a>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="asdt-card p-5 text-center">
+
+                        <i class="bi bi-heart-fill display-2 text-danger"></i>
+
+                        <h3 class="fw-black mt-4">Merci ❤️</h3>
+
+                        <p class="asdt-muted">Chaque contribution, petite ou grande, fait avancer notre projet. </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}
