@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+    Albums
+{% endblock %}
+
+{% block content %}
+
+    <section class="gallery-hero gallery-hero-small">
+
+        <div class="asdt-shell">
+
+            <div class="team-hero__content">
+                <span class="asdt-kicker">Galerie</span>
+
+                <h1>Tous les albums</h1>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="asdt-section">
+
+        <div class="asdt-shell">
+
+            <div class="row g-4">
+
+                {% for album in albums %}
+                    <div class="col-lg-4">
+                        {% include "partials/cards/_album_card.html" %}
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

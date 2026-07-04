@@ -1,0 +1,89 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}
+    Galerie | {{ SITE_NAME }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="gallery-hero">
+
+        <div class="asdt-shell">
+
+            <div class="team-hero__content">
+                <span class="asdt-kicker">Galerie</span>
+
+                <h1>Nos meilleurs moments.</h1>
+
+                <p>
+                    Découvrez les entraînements, matchs,
+                    événements et la vie de l'AS Dream Team.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {% if featured %}
+
+        <section class="asdt-section">
+
+            <div class="asdt-shell">
+
+                <div class="row align-items-center g-5">
+                    
+                    <div class="col-lg-6">
+                        {% if featured.cover %}
+                            <img
+                            src="{{ featured.cover.url }}"
+                            class="img-fluid asdt-img-rounded"
+                            alt="{{ featured.title }}">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-lg-6">
+                        <span class="asdt-kicker">Album à la une</span>
+                        <h2 class="display-5 fw-black mt-3">{{ featured.title }}</h2>
+                        <p class="lead asdt-muted">{{ featured.description }}</p>
+                        <a href="{{ featured.get_absolute_url }}" class="btn btn-asdt-accent">Découvrir</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    {% endif %}
+
+    <section class="asdt-section asdt-soft-bg">
+
+        <div class="asdt-shell">
+
+            <div class="text-center mb-5">
+                <span class="asdt-kicker">Albums</span>
+                <h2 class="display-5 fw-black mt-3">Tous les albums</h2>
+            </div>
+
+            <div class="row g-4">
+
+                {% for album in albums %}
+                    <div class="col-md-6 col-xl-4">
+                        {% include "partials/cards/_album_card.html" %}
+                    </div>
+                {% empty %}
+                    <div class="col-12">
+                        <div class="asdt-card p-5 text-center">Aucun album disponible.</div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

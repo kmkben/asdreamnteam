@@ -31,5 +31,7 @@ urlpatterns = [
     
     path("news/", include("news.urls")),
     
+    path("galleries/", include("gallery.urls")),
+    
     path('admin/', admin.site.urls),
 ]

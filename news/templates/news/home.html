@@ -35,7 +35,7 @@
         </div>
 
         <div data-aos="zoom-in">
-            {% include "partials/cards/featured_news_card.html" %}
+            {% include "partials/cards/_featured_news_card.html" %}
         </div>
     </div>
 </section>
@@ -59,7 +59,7 @@
         <div class="row g-4">
             {% for article in articles %}
                 <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
-                    {% include "partials/cards/news_card.html" %}
+                    {% include "partials/cards/_news_card.html" %}
                 </div>
             {% empty %}
                 <div class="col-12">

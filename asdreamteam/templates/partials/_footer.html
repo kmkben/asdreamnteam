@@ -21,10 +21,10 @@
                 <h5 class="asdt-footer-title mb-3">Liens rapide</h5>
                 <ul class="list-unstyled d-grid gap-2">
                     <li><a href="{% url 'home' %}">Accueil</a></li>
-                    <li><a href="#">Formation</a></li>
-                    <li><a href="#">Compétitions</a></li>
-                    <li><a href="#">Actualités</a></li>
-                    <li><a href="#">Galerie</a></li>
+                    <li><a href="{% url 'academy:home' %}">Formation</a></li>
+                    <li><a href="{% url 'competitions:home' %}">Compétitions</a></li>
+                    <li><a href="{% url 'news:home' %}">Actualités</a></li>
+                    <li><a href="{% url 'gallery:home' %}">Galerie</a></li>
                     <li><a href="#">Nous rejoindre</a></li>
                 </ul>
             </div>

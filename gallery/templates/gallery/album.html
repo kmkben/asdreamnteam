@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+    {{ album.title }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="gallery-hero gallery-hero-small">
+
+        <div class="asdt-shell">
+
+            <div class="team-hero__content">
+                <span class="asdt-kicker">Album</span>
+                <h1>{{ album.title }}</h1>
+                <p>{{ album.description }}</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="asdt-section">
+
+        <div class="asdt-shell">
+
+            <div class="photo-grid">
+
+                {% for photo in photos %}
+                    {% include "partials/cards/_photo_card.html" %}
+                {% empty %}
+                    <div class="asdt-card p-5 text-center">Aucune photo.</div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}
