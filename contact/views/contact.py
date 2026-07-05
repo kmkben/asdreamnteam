@@ -11,7 +11,7 @@ def contact(request):
 
     if request.method == "POST" and form.is_valid():
         full_name = form.cleaned_data["full_name"]
-        email = form.cleaned_data["email"]
+        sender_email = form.cleaned_data["email"]
         subject = form.cleaned_data["subject"]
         message = form.cleaned_data["message"]
 
@@ -27,13 +27,23 @@ Message :
 {message}
 """
 
-        send_mail(
+        # send_mail(
+        #     subject=subject,
+        #     message=message,
+        #     from_email=settings.DEFAULT_FROM_EMAIL,
+        #     recipient_list=[settings.ADMIN_EMAIL],
+        #     fail_silently=False,
+        # )
+        
+        email = EmailMessage(
             subject=email_subject,
-            message=email_message,
+            body=email_message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.ADMIN_EMAIL],
-            fail_silently=False,
+            to=[settings.ADMIN_EMAIL],
+            reply_to=[sender_email],
         )
+
+        email.send(fail_silently=False)
 
         messages.success(
             request,

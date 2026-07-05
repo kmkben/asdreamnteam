@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'news',
     'gallery',
     'contact',
-    # 'join',
+    'membership',
     'donation',
 
     'crispy_forms',

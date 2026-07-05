@@ -1,0 +1,183 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Nous rejoindre | {{ SITE_NAME }}{% endblock title %}
+
+{% block content %}
+
+<section class="membership-hero">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Nous rejoindre</span>
+
+            <h1>Rejoins l’aventure AS Dream Team.</h1>
+
+            <p>
+                Tu veux progresser, jouer en équipe et vivre ta passion du football
+                dans un cadre sérieux ? Fais ta demande d'inscription.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="asdt-kicker">Inscription</span>
+
+                <h2 class="asdt-title display-5 mt-3 mb-4">
+                    Une première étape simple.
+                </h2>
+
+                <p class="lead asdt-muted">
+                    Remplis le formulaire ci-dessous. L'équipe du club te contactera
+                    pour confirmer les informations et t'expliquer les prochaines étapes.
+                </p>
+
+                <div class="d-grid gap-3 mt-4">
+                    <div class="asdt-card p-4">
+                        <i class="bi bi-person-check-fill membership-icon"></i>
+                        <h5 class="fw-black mt-3">Pour les joueurs</h5>
+                        <p class="asdt-muted mb-0">
+                            Indique ton âge, ta catégorie souhaitée et tes coordonnées.
+                        </p>
+                    </div>
+
+                    <div class="asdt-card p-4">
+                        <i class="bi bi-people-fill membership-icon"></i>
+                        <h5 class="fw-black mt-3">Pour les parents</h5>
+                        <p class="asdt-muted mb-0">
+                            Si le joueur est mineur, ajoutez le nom du parent ou tuteur.
+                        </p>
+                    </div>
+
+                    <div class="asdt-card p-4">
+                        <i class="bi bi-whatsapp membership-icon"></i>
+                        <h5 class="fw-black mt-3">Réponse du club</h5>
+                        <p class="asdt-muted mb-0">
+                            Le club vous recontactera rapidement par téléphone ou WhatsApp.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="asdt-card p-4 p-md-5">
+                    <h3 class="fw-black mb-4">Demande d'inscription</h3>
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label class="form-label fw-bold" for="{{ form.full_name.id_for_label }}">
+                                    {{ form.full_name.label }}
+                                </label>
+                                {{ form.full_name }}
+                                {{ form.full_name.errors }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold" for="{{ form.age.id_for_label }}">
+                                    {{ form.age.label }}
+                                </label>
+                                {{ form.age }}
+                                {{ form.age.errors }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold" for="{{ form.category.id_for_label }}">
+                                    {{ form.category.label }}
+                                </label>
+                                {{ form.category }}
+                                {{ form.category.errors }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold" for="{{ form.phone.id_for_label }}">
+                                    {{ form.phone.label }}
+                                </label>
+                                {{ form.phone }}
+                                {{ form.phone.errors }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold" for="{{ form.email.id_for_label }}">
+                                    {{ form.email.label }}
+                                </label>
+                                {{ form.email }}
+                                {{ form.email.errors }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold" for="{{ form.guardian_name.id_for_label }}">
+                                    {{ form.guardian_name.label }}
+                                </label>
+                                {{ form.guardian_name }}
+                                {{ form.guardian_name.errors }}
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold" for="{{ form.message.id_for_label }}">
+                                    {{ form.message.label }}
+                                </label>
+                                {{ form.message }}
+                                {{ form.message.errors }}
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-asdt-accent btn-lg fw-bold text-uppercase px-4">
+                                    Envoyer ma demande
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="asdt-section pb-0">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="asdt-kicker">Pourquoi nous rejoindre ?</span>
+                <h2 class="asdt-title display-5 mt-3">
+                    Plus qu’un entraînement, une vraie expérience.
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                        <i class="bi bi-shield-check asdt-icon mb-3"></i>
+                        <h5 class="fw-black">Encadrement sérieux</h5>
+                        <p class="asdt-muted mb-0">
+                            Une équipe investie pour accompagner les jeunes dans leur progression.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                        <i class="bi bi-people-fill asdt-icon mb-3"></i>
+                        <h5 class="fw-black">Esprit collectif</h5>
+                        <p class="asdt-muted mb-0">
+                            Le club valorise le respect, l'entraide et le dépassement de soi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                        <i class="bi bi-trophy-fill asdt-icon mb-3"></i>
+                        <h5 class="fw-black">Ambition sportive</h5>
+                        <p class="asdt-muted mb-0">
+                            Entraînements, matchs et compétitions pour progresser réellement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
