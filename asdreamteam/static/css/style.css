@@ -24,6 +24,17 @@ Contact
     HOME
 =========================================================*/
 
+body {
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 30rem),
+        var(--bs-body-bg);
+}
+
+.asdt-title,
+.fw-black {
+    letter-spacing: -0.03em;
+}
+
 /*=========================================================
     HOME
 =========================================================*/

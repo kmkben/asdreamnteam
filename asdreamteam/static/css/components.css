@@ -57,9 +57,9 @@ body {
 ========================= */
 
 .asdt-kicker {
-    color: var(--asdt-secondary);
-    font-weight: 800;
-    letter-spacing: 0.14em;
+    color: var(--asdt-blue);
+    font-weight: 900;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -73,7 +73,11 @@ body {
     color: var(--asdt-muted-color);
 }
 
-
+section[class*="hero"] .asdt-kicker,
+.featured-news-card .asdt-kicker,
+.asdt-cta .asdt-kicker {
+    color: var(--asdt-sky);
+}
 
 /* =========================
    Navbar
@@ -246,20 +250,21 @@ body {
 }
 
 .btn-asdt-accent {
-    --bs-btn-color: #111;
-    --bs-btn-bg: var(--asdt-accent);
-    --bs-btn-border-color: var(--asdt-accent);
-    --bs-btn-hover-color: #111;
-    --bs-btn-hover-bg: #ffd24a;
-    --bs-btn-hover-border-color: #ffd24a;
+    --bs-btn-color: #002033;
+    --bs-btn-bg: var(--asdt-sky);
+    --bs-btn-border-color: var(--asdt-sky);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--asdt-blue);
+    --bs-btn-hover-border-color: var(--asdt-blue);
 }
 
+
 .btn-outline-asdt {
-    --bs-btn-color: var(--asdt-primary);
-    --bs-btn-border-color: var(--asdt-primary);
+    --bs-btn-color: var(--asdt-blue);
+    --bs-btn-border-color: var(--asdt-blue);
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--asdt-primary);
-    --bs-btn-hover-border-color: var(--asdt-primary);
+    --bs-btn-hover-bg: var(--asdt-blue);
+    --bs-btn-hover-border-color: var(--asdt-blue);
 }
 
 [data-bs-theme="dark"] .btn-outline-asdt {
