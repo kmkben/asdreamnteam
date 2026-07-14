@@ -240,6 +240,17 @@ DEVELOPER_NAME = "KMK-IoTech"
 DEVELOPER_URL = "https://kmk-iotech.com"
 
 
+PAYPAL_HOSTED_BUTTON_ID = env(
+    "PAYPAL_HOSTED_BUTTON_ID",
+    default="",
+).strip()
+
+ORANGE_MONEY_PAYMENT_URL = env(
+    "ORANGE_MONEY_PAYMENT_URL",
+    default="https://www.tresor.ongdreamteam.com/orangemoneypayment",
+).strip()
+
+
 # --------------------------------------------------
 # Other
 # --------------------------------------------------

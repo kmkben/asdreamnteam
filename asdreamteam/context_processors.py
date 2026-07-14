@@ -7,6 +7,8 @@ def site_settings(request):
         "SITE_TAGLINE": settings.SITE_TAGLINE,
         "DEVELOPER_NAME": settings.DEVELOPER_NAME,
         "DEVELOPER_URL": settings.DEVELOPER_URL,
+        "PAYPAL_HOSTED_BUTTON_ID": settings.PAYPAL_HOSTED_BUTTON_ID,
+        "ORANGE_MONEY_PAYMENT_URL": settings.ORANGE_MONEY_PAYMENT_URL,
     }
 
 

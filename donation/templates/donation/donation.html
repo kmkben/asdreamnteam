@@ -1,131 +1,244 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block title %}
-    Faire un don | {{ SITE_NAME }}
-{% endblock %}
+{% block title %}Faire un don | {{ SITE_NAME }}{% endblock title %}
 
 {% block content %}
 
-    <section class="donation-hero">
+<section class="donation-hero">
+    <div class="asdt-shell">
+        <div class="team-hero__content" data-aos="fade-up">
+            <span class="asdt-kicker">Soutenir le club</span>
 
-        <div class="asdt-shell">
+            <h1>Chaque contribution fait avancer notre projet.</h1>
 
-            <div class="team-hero__content">
+            <p>
+                Votre soutien nous aide à former les jeunes, acheter du matériel,
+                participer aux compétitions et développer les activités de l’AS Dream Team.
+            </p>
 
-                <span class="asdt-kicker">Soutenez le club</span>
+            <a href="#donation-methods"
+               class="btn btn-asdt-accent btn-lg fw-bold text-uppercase px-4 mt-4">
+                Choisir un moyen de paiement
+            </a>
+        </div>
+    </div>
+</section>
 
-                <h1>Chaque don compte.</h1>
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Votre impact</span>
 
-                <p>
-                    Votre soutien permet d'acheter du matériel, d'organiser des compétitions, de former les jeunes et de faire grandir l'AS Dream Team.
-                </p>
+            <h2 class="asdt-title display-5 mt-3">
+                À quoi servent les dons ?
+            </h2>
 
-                <a href="#donate" class="btn btn-asdt-accent btn-lg fw-bold mt-4">Je fais un don</a>
+            <p class="asdt-muted fs-5 mx-auto mt-3 donation-section-intro">
+                Chaque don, quel que soit son montant, contribue directement
+                au développement sportif et humain du club.
+            </p>
+        </div>
 
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3" data-aos="fade-up">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-dribbble donation-impact-icon"></i>
+
+                    <h4 class="fw-black mt-4">Matériel sportif</h4>
+
+                    <p class="asdt-muted mb-0">
+                        Ballons, chasubles, cônes, équipements et matériel d’entraînement.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-mortarboard-fill donation-impact-icon"></i>
+
+                    <h4 class="fw-black mt-4">Formation</h4>
+
+                    <p class="asdt-muted mb-0">
+                        Encadrement, stages et accompagnement des jeunes joueurs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-trophy-fill donation-impact-icon"></i>
+
+                    <h4 class="fw-black mt-4">Compétitions</h4>
+
+                    <p class="asdt-muted mb-0">
+                        Transport, inscriptions et participation aux matchs et tournois.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="asdt-card asdt-card-hover h-100 p-4 text-center">
+                    <i class="bi bi-people-fill donation-impact-icon"></i>
+
+                    <h4 class="fw-black mt-4">Vie du club</h4>
+
+                    <p class="asdt-muted mb-0">
+                        Événements, actions solidaires et activités pour les jeunes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="donation-methods" class="asdt-section asdt-soft-bg">
+    <div class="asdt-shell">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="asdt-kicker">Moyens de paiement</span>
+
+            <h2 class="asdt-title display-5 mt-3">
+                Choisissez la solution qui vous convient.
+            </h2>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+
+            <div class="col-lg-4" data-aos="fade-up">
+                <div class="asdt-card donation-method-card h-100 p-4 p-xl-5 text-center">
+                    <div class="donation-method-icon donation-method-icon--paypal">
+                        <i class="fa-brands fa-paypal"></i>
+                    </div>
+
+                    <h3 class="fw-black mt-4">PayPal</h3>
+
+                    <p class="asdt-muted">
+                        Effectuez un don sécurisé par PayPal ou par carte bancaire,
+                        directement depuis notre site.
+                    </p>
+
+                    {% if PAYPAL_HOSTED_BUTTON_ID %}
+                        <div id="paypal-donate-button-container"
+                             class="paypal-donate-container mt-auto pt-3">
+                        </div>
+                    {% else %}
+                        <div class="mt-auto pt-3">
+                            <button type="button"
+                                    class="btn btn-secondary w-100"
+                                    disabled>
+                                PayPal temporairement indisponible
+                            </button>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="asdt-card donation-method-card h-100 p-4 p-xl-5 text-center">
+                    <div class="donation-method-icon donation-method-icon--orange">
+                        <i class="bi bi-phone-fill"></i>
+                    </div>
+
+                    <h3 class="fw-black mt-4">Orange Money</h3>
+
+                    <p class="asdt-muted">
+                        Vous serez redirigé vers la plateforme sécurisée Orange Money
+                        utilisée par le club pour finaliser votre don.
+                    </p>
+
+                    <div class="mt-auto pt-3">
+                        {% if ORANGE_MONEY_PAYMENT_URL %}
+                            <a href="{{ ORANGE_MONEY_PAYMENT_URL }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn btn-orange-money btn-lg w-100 fw-bold">
+                                <i class="bi bi-box-arrow-up-right me-2"></i>
+                                Payer avec Orange Money
+                            </a>
+                        {% else %}
+                            <button type="button"
+                                    class="btn btn-secondary btn-lg w-100"
+                                    disabled>
+                                Orange Money temporairement indisponible
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="asdt-card donation-method-card h-100 p-4 p-xl-5 text-center">
+                    <div class="donation-method-icon donation-method-icon--cash">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+
+                    <h3 class="fw-black mt-4">Don en espèces</h3>
+
+                    <p class="asdt-muted">
+                        Pour effectuer un don en espèces, contactez directement
+                        l’équipe du club afin d’organiser la remise.
+                    </p>
+
+                    <div class="mt-auto pt-3">
+                        <a href="{% url 'contact:contact' %}"
+                           class="btn btn-outline-asdt btn-lg w-100 fw-bold">
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            Contacter le club
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
+    </div>
+</section>
 
-    </section>
+<section class="asdt-section">
+    <div class="asdt-shell">
+        <div class="donation-thanks text-center" data-aos="zoom-in">
+            <i class="bi bi-heart-fill text-danger"></i>
 
+            <h2 class="fw-black mt-4">
+                Merci de soutenir {{ SITE_NAME }}
+            </h2>
 
-    <section class="asdt-section">
-
-        <div class="asdt-shell">
-
-            <div class="text-center mb-5">
-
-                <span class="asdt-kicker">Pourquoi soutenir ?</span>
-
-                <h2 class="display-5 fw-black mt-3">Votre aide change des vies.</h2>
-
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-md-4">
-
-                    <div class="asdt-card p-4 h-100 text-center">
-
-                        <i class="bi bi-dribbble fs-1 text-warning"></i>
-
-                        <h4 class="fw-black mt-4">Matériel sportif</h4>
-
-                        <p class="asdt-muted">Ballons, chasubles, cônes, équipements et entretien. </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-4">
-
-                    <div class="asdt-card p-4 h-100 text-center">
-
-                        <i class="bi bi-mortarboard-fill fs-1 text-warning"></i>
-
-                        <h4 class="fw-black mt-4">Formation</h4>
-
-                        <p class="asdt-muted">Accompagner les jeunes dans leur progression. </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-4">
-
-                    <div class="asdt-card p-4 h-100 text-center">
-
-                        <i class="bi bi-trophy-fill fs-1 text-warning"></i>
-
-                        <h4 class="fw-black mt-4">Compétitions</h4>
-
-                        <p class="asdt-muted">Participer à davantage de tournois.</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+            <p class="mb-0">
+                Chaque contribution, petite ou grande, nous aide à construire
+                un avenir meilleur pour les jeunes du club.
+            </p>
         </div>
+    </div>
+</section>
 
-    </section>
+{% endblock content %}
 
-    <section id="donate" class="asdt-section asdt-soft-bg">
+{% block extra_js %}
+    {{ block.super }}
 
-        <div class="asdt-shell">
+    {% if PAYPAL_HOSTED_BUTTON_ID %}
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+                charset="UTF-8"></script>
 
-            <div class="row align-items-center">
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = document.querySelector(
+                    "#paypal-donate-button-container"
+                );
 
-                <div class="col-lg-7">
+                if (!container || typeof PayPal === "undefined") {
+                    return;
+                }
 
-                    <h2 class="display-5 fw-black">Comment faire un don ?</h2>
-
-                    <p class="lead asdt-muted mt-4">Les moyens de paiement seront bientôt disponibles. En attendant, vous pouvez contacter directement le club.</p>
-
-                    <a href="{% url 'contact:contact' %}" class="btn btn-asdt-primary fw-bold mt-4">Contacter le club</a>
-
-                </div>
-
-                <div class="col-lg-5">
-
-                    <div class="asdt-card p-5 text-center">
-
-                        <i class="bi bi-heart-fill display-2 text-danger"></i>
-
-                        <h3 class="fw-black mt-4">Merci ❤️</h3>
-
-                        <p class="asdt-muted">Chaque contribution, petite ou grande, fait avancer notre projet. </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-{% endblock %}
+                PayPal.Donation.Button({
+                    env: "production",
+                    hosted_button_id: "{{ PAYPAL_HOSTED_BUTTON_ID|escapejs }}",
+                    image: {
+                        src: "https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif",
+                        title: "Faire un don avec PayPal",
+                        alt: "Bouton de don PayPal"
+                    }
+                }).render("#paypal-donate-button-container");
+            });
+        </script>
+    {% endif %}
+{% endblock extra_js %}

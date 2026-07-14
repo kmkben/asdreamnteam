@@ -944,28 +944,116 @@ body {
 /*=========================================================
     DONATION
 =========================================================*/
+/*=========================================================
+    DONATION
+=========================================================*/
 
-.donation-hero{
-
-    min-height:560px;
-    
-    display:flex;
-    
-    align-items:center;
-    
+.donation-hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
     background:
-    linear-gradient(
-    90deg,
-    rgba(3,40,66,.95),
-    rgba(3,40,66,.55),
-    rgba(3,40,66,.20)
-    ),
-    url("../images/heroes/donation-banner.jpg")
-    center/cover no-repeat;
-    
-    color:white;
-    
-    }
+        linear-gradient(
+            90deg,
+            rgba(3, 40, 66, 0.96) 0%,
+            rgba(3, 40, 66, 0.66) 52%,
+            rgba(3, 40, 66, 0.18) 100%
+        ),
+        url("../images/heroes/donation-banner.jpg")
+        center / cover no-repeat;
+    color: #fff;
+}
+
+.donation-section-intro {
+    max-width: 760px;
+}
+
+.donation-impact-icon {
+    color: var(--asdt-secondary);
+    font-size: 3rem;
+}
+
+.donation-method-card {
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--asdt-secondary);
+}
+
+.donation-method-icon {
+    width: 88px;
+    height: 88px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50%;
+    font-size: 2.6rem;
+}
+
+.donation-method-icon--paypal {
+    color: #003087;
+    background: rgba(0, 112, 186, 0.12);
+}
+
+.donation-method-icon--orange {
+    color: #ff7900;
+    background: rgba(255, 121, 0, 0.13);
+}
+
+.donation-method-icon--cash {
+    color: var(--asdt-primary);
+    background: rgba(8, 119, 183, 0.12);
+}
+
+.paypal-donate-container {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paypal-donate-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-orange-money {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ff7900;
+    --bs-btn-border-color: #ff7900;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #dc6800;
+    --bs-btn-hover-border-color: #dc6800;
+    --bs-btn-focus-shadow-rgb: 255, 121, 0;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #c85f00;
+    --bs-btn-active-border-color: #c85f00;
+}
+
+.donation-thanks {
+    padding: clamp(3rem, 7vw, 6rem) 1.5rem;
+    border-radius: var(--asdt-radius-lg);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 40, 66, 0.98),
+            rgba(8, 119, 183, 0.94)
+        );
+    color: #fff;
+    box-shadow: var(--asdt-shadow-lg);
+}
+
+.donation-thanks i {
+    color: var(--asdt-secondary);
+    font-size: 4rem;
+}
+
+.donation-thanks p {
+    max-width: 720px;
+    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 1.1rem;
+}
 
 
 /*=========================================================
