@@ -6,9 +6,14 @@ django-crispy-forms==2.6
 django-environ==0.14.0
 django-storages==1.14.6
 fontawesomefree==6.6.0
+gunicorn==26.0.0
 humanize==4.15.0
 mysqlclient==2.2.8
 packaging==26.2
 pillow==12.2.0
+psycopg==3.3.4
+psycopg-binary==3.3.4
+psycopg-pool==3.3.1
 sqlparse==0.5.5
+typing_extensions==4.16.0
 whitenoise==6.12.0
