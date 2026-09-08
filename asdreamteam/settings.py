@@ -40,6 +40,9 @@ CSRF_TRUSTED_ORIGINS = [
     "https://www.asdreamteam.club",
     "https://authentic-blessing-production-ca37.up.railway.app",
     "https://asdreamteam.up.railway.app",
+    "https://asdreamnteam-production.up.railway.app",
+    "https://asdreamteam.co",
+    "https://www.asdreamteam.co",
 ]
 
 
