@@ -5,7 +5,6 @@ from news.models import NewsArticle
 # Register your models here.
 
 
-
 @admin.register(NewsArticle)
 class ArticleAdmin(admin.ModelAdmin):
 
@@ -29,9 +28,7 @@ class ArticleAdmin(admin.ModelAdmin):
     )
 
     prepopulated_fields = {
-        "slug": (
-            "title",
-        )
+        "slug": ("title",)
     }
 
     list_editable = (

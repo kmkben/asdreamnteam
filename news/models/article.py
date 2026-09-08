@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 
 class NewsArticle(models.Model):
@@ -30,7 +31,7 @@ class NewsArticle(models.Model):
 
     published_at = models.DateTimeField(
         "Date de publication",
-        auto_now_add=True,
+        default=timezone.now,
     )
 
     is_published = models.BooleanField(
